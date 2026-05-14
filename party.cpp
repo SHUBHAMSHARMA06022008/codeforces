@@ -1,23 +1,14 @@
 #include <iostream>
-#include <unordered_map>
 using namespace std;
 
 int main() {
-    int x;
-    cin>>x;
-    unordered_map<int,int> m;
-    unordered_map<int,int> rev;
-    for(int i = 1 ; i<=x; i++ ){
-        int y;
-        cin>>y;
-        m[i] = y;    
+    int n;
+    cin >> n;
+    int p[101], ans[101];
+    for (int i = 1; i <= n; i++) {
+        cin >> p[i];
+        ans[p[i]] = i;
     }
-    for(auto i: m){
-        rev[i.second] = i.first;
-    }
-    for(int i = 1; i<=x ; i++){
-        cout<<rev[i]<<" ";
-    }
-    cout<<endl;
-    return 0;
+    for (int i = 1; i <= n; i++)
+        cout << ans[i] << " \n"[i==n];
 }
